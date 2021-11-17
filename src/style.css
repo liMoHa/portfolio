@@ -12,10 +12,11 @@
 
   /* size */
   --font-big: 28px;
-  --font-medium: 16px;
+  --font-medium: 20px;
   --font-small: 14px;
-  --font-smaller: 8px;
+  --font-smaller: 11px;
 
+  --base-space-bigger: 30px;
   --base-space-big: 20px;
   --base-space-medium: 10px;
   --base-space-small: 5px;
@@ -58,7 +59,7 @@ button {
 
 .home .nav-bar__logo__text {
   color: var(--color-light-white);
-  font-size: var(--font-medium);
+  font-size: var(--font-small);
   font-weight: 500;
 }
 
@@ -69,7 +70,7 @@ button {
 .home .nav-bar__links .link {
   font-size: var(--font-small);
   color: var(--color-light-white);
-  margin-right: var(--base-space-medium);
+  margin-left: var(--base-space-medium);
   padding: 5px;
 }
 
@@ -104,7 +105,7 @@ button {
 
 .home .thumbnail__intro.small {
   margin-bottom: var(--base-space-big);
-  font-size: var(--font-medium);
+  font-size: var(--font-small);
   text-align: center;
 }
 
@@ -120,4 +121,98 @@ button {
 
 .home .thumbnail__contact-button:hover {
   background-color: var(--color-light-green);
+}
+
+/* .about-me */
+.about-me {
+  background-color: var(--color-white);
+  display: flex;
+  flex-direction: column;
+  padding: var(--base-space-bigger) var(--base-space-big);
+}
+
+.about-me__description {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: var(--base-space-big);
+}
+
+.about-me__description .title {
+  font-size: var(--font-big);
+  font-weight: bold;
+  color: var(--color-black);
+  margin-bottom: var(--base-space-small);
+}
+
+.about-me__description .description {
+  color: var(--color-dark-gray);
+  text-align: center;
+  font-size: var(--font-small);
+}
+
+.about-me__stacks {
+  display: flex;
+  margin-bottom: var(--base-space-big);
+}
+
+.about-me__stacks .stack {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.about-me__stacks .stack .btn {
+  width: 100px;
+  height: 100px;
+  background-color: var(--color-light-white);
+  border: 1px solid var(--color-gray);
+  border-radius: 50%;
+}
+
+.about-me__stacks .stack .btn > i:hover {
+  color: var(--color-yellow);
+}
+
+.about-me__stacks .stack .btn i {
+  font-size: 50px;
+  color: var(--color-dark-gray);
+}
+
+.about-me__stacks .stack .field {
+  font-size: var(--font-medium);
+  color: var(--color-light-black);
+  margin-bottom: var(--base-space-small);
+  font-weight: 500;
+}
+
+.about-me__stacks .stack .skill {
+  font-size: var(--font-small);
+  color: var(--color-dark-gray);
+  text-align: center;
+  width: 150px;
+}
+
+.about-me__stacks .stack.front-end {
+  flex: 1 1 30%;
+}
+
+.about-me__stacks .stack.back-end {
+  flex: 1 1 30%;
+}
+
+.about-me__stacks .stack.tools {
+  flex: 1 1 30%;
+}
+
+.about-me__career {
+  display: flex;
+  flex-direction: column;
+  border-left: 1px solid var(--color-dark-gray);
+}
+
+.about-me__career span {
+  margin-left: var(--base-space-medium);
+  font-size: var(--font-small);
+  color: var(--color-dark-gray);
 }
