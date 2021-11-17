@@ -15,8 +15,203 @@
       integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm"
       crossorigin="anonymous"
     />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500&family=Roboto:ital,wght@0,100;0,300;1,300&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="./style.css" />
     <script src="main.js" defer></script>
   </head>
-  <body></body>
+  <body>
+    <!-- BEM 스타일 적용하기 -->
+    <!-- header -->
+    <header class="home">
+      <!-- background img 어떻게 맨 뒤에 보내지? -->
+      <nav class="nav-bar">
+        <div class="nav-bar__logo">
+          <!-- bem 이름 어떻게 지어야 되지? logo라는 box안에 또 icon과 text로 나뉘는데 이름을 어떻게 지어야 할지 모르겠다...-->
+          <p class="nav-bar__logo__text">MOHA</p>
+        </div>
+        <div class="nav-bar__links">
+          <a href="" class="link link-home">Home</a>
+          <a href="" class="link link-about">About</a>
+          <a href="" class="link link-skills">Skills</a>
+          <a href="" class="link link-my-work">My Work</a>
+          <a href="" class="link link-testimonial">Testimonial</a>
+          <a href="" class="link link-contact">Contact</a>
+        </div>
+      </nav>
+      <div class="thumbnail">
+        <img
+          src="./image/thumbnail-img.png"
+          alt="thumbnail image"
+          class="thumbnail__image"
+        />
+        <span class="thumbnail__intro big">
+          안녕하세요,<br />프론트엔드 개발자 MOHA입니다.</span
+        >
+        <p class="thumbnail__intro small">
+          자기개발을 통해 성장하는 것을 즐기며 모르는 것을 줄여나가는 과정을
+          좋아합니다.
+        </p>
+        <button class="thumbnail__contact-button">CONTACT ME</button>
+      </div>
+    </header>
+    <section class="about-me">
+      <div class="about-me__description">
+        <span class="title">About me</span>
+        <span class="description">
+          프로젝트를 하면서 아래와 같은 기술 스택을 사용했습니다. 아직 front-end
+          라이브러리도 익숙하지 않아서 프론트 부분에 많은 시간을 투자하여
+          공부하고 있습니다.
+        </span>
+      </div>
+      <!-- 이 부분 클래스명 어떻게 지어야 할지 모르겠다.-->
+      <div class="about-me__stack-buttons">
+        <div class="stack front">
+          <button class="btn">
+            <i class="fab fa-html5"></i>
+          </button>
+          <span class="field">Front-end</span>
+          <span class="stack">
+            HTML, CSS, JavaScript, TypeScript, React, Vue.js
+          </span>
+        </div>
+        <div class="stack back-end">
+          <button class="btn">
+            <i class="fas fa-server"></i>
+          </button>
+          <span class="field">Back-end</span>
+          <span class="stack">Node.js, express</span>
+        </div>
+        <div class="stack tools">
+          <button class="btn">
+            <i class="fas fa-tools"></i>
+          </button>
+          <span class="field">Tools</span>
+          <span class="stack">Git, Notion</span>
+        </div>
+      </div>
+      <div class="about-me__career">
+        <span>2019~2021 컴퓨터공학과 재학</span>
+        <span>2022 컴퓨터공학과 졸업</span>
+      </div>
+    </section>
+    <section class="skills">
+      <div class="skills__description">
+        <span class="title">Skills</span>
+        <span class="description">
+          현재는 프론트엔드 부분을 공부하고 있습니다. 반응형 웹 페이지, 동적
+          웹페이지, 여러 UI를 많이 만들어볼 계획입니다. 이후 react같은
+          프레임워크를 배우는 것을 목표로 하고 있습니다.
+        </span>
+      </div>
+      <ul class="skills__status-board">
+        <li class="status-bar status-bar1">
+          <div class="status">
+            <div class="skill-name">HTML</div>
+            <div class="proficiency">98%</div>
+          </div>
+          <div class="bar">will be removed</div>
+        </li>
+        <li class="status-bar status-bar2">
+          <div class="status">
+            <div class="skill-name">CSS</div>
+            <div class="proficiency">90%</div>
+          </div>
+          <div class="bar">will be removed</div>
+        </li>
+        <li class="status-bar status-bar3">
+          <div class="status">
+            <div class="skill-name">JavaScript</div>
+            <div class="proficiency">70%</div>
+          </div>
+          <div class="bar">will be removed</div>
+        </li>
+        <li class="status-bar status-bar4">
+          <div class="status">
+            <div class="skill-name">React</div>
+            <div class="proficiency">10%</div>
+          </div>
+          <div class="bar">will be removed</div>
+        </li>
+        <li class="status-bar status-bar5">
+          <div class="status">
+            <div class="skill-name">Vue.js</div>
+            <div class="proficiency">0%</div>
+          </div>
+          <div class="bar">will be removed</div>
+        </li>
+      </ul>
+    </section>
+    <section class="my-work">
+      <div class="my-work__buttons">
+        <button class="btn btn-all">all</button>
+        <button class="btn btn-front">Front-end</button>
+        <button class="btn btn-back">Back-end</button>
+      </div>
+      <!-- 여기 데이터 동적으로 처리되어야 하지 않을까? -->
+      <div class="my_work__projects">
+        <div class="project project1">
+          <img src="./image/navbar.png" alt="project1" />
+        </div>
+        <div class="project project2">
+          <img src="./image/youtube.png" alt="project2" />
+        </div>
+        <div class="project project3">
+          <img src="./image/minishop.png" alt="project3" />
+        </div>
+      </div>
+    </section>
+    <section class="testimonial">
+      <div class="whoAndWord whoAndWorld-1">
+        <img
+          class="who"
+          src="./image/recomendation.png"
+          alt="person who recomendated me"
+        />
+        <div class="word">
+          <span>
+            과제를 내면 항상 끝까지 마무리해서 제출하는 정말 성실한 사람입니다.
+          </span>
+        </div>
+      </div>
+      <div class="whoAndWord whoAndWord-2">
+        <img
+          class="who"
+          src="./image/recomendation.png"
+          alt="person who recomendated me"
+        />
+        <div class="word">
+          <span>
+            문제를 해결하는 것을 좋아하고 그 과정에서 성취감을 느끼는
+            사람입니다. 같이 일할 때 뭐든 적극적으로 임하는 자세 덕분에 에너지를
+            얻을 수 있었습니다.
+          </span>
+        </div>
+      </div>
+    </section>
+    <footer class="contact">
+      <span class="contact__title">Contact me</span>
+      <div class="contact__buttons">
+        <div class="box box1">
+          <button class="btn btn-email"><i class="fas fa-envelope"></i></button>
+          <span class="text text1"></span>
+        </div>
+        <div class="box box2">
+          <button class="btn btn-github"><i class="fab fa-github"></i></button>
+          <span class="text text2"></span>
+        </div>
+        <div class="box box3">
+          <button class="btn btn-blog"><i class="fab fa-blogger-b"></i></button>
+          <span class="text text3"></span>
+        </div>
+      </div>
+      <span class="contact__copyright">
+        Copyrightⓒ 2021 MOHA - All rights reserved
+      </span>
+    </footer>
+  </body>
 </html>
