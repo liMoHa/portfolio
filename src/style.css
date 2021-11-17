@@ -1,0 +1,43 @@
+:root {
+  /* color */
+  --color-light-white: #fff;
+  --color-white: #f5f5f5;
+  --color-light-black: #3f3f3f;
+  --color-black: #262626;
+  --color-gray: #d9d9d9;
+  --color-dark-gray: #595959;
+  --color-green: #64b8a2;
+  --color-light-green: #89c9b8;
+  --color-yellow: #febf00;
+
+  /* size */
+  --font-big: 28px;
+  --font-medium: 16px;
+  --font-small: 14px;
+  --font-smaller: 8px;
+
+  --base-space-big: 20px;
+  --base-space-medium: 10px;
+  --base-space-small: 5px;
+  --size-thumbnail: 130px;
+}
+
+* {
+  font-family: "Noto Sans KR", sans-serif;
+  padding: 0px;
+  margin: 0px;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+button {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
