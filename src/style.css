@@ -4,7 +4,7 @@
   --color-white: #f5f5f5;
   --color-light-black: #3f3f3f;
   --color-black: #262626;
-  --color-gray: #f0f0ed; /*f1f1f1  efece6*/
+  --color-gray: #e9e9e9; /*f1f1f1  efece6*/
   --color-dark-gray: #595959;
   --color-green: #64b8a2;
   --color-light-green: #89c9b8;
@@ -20,6 +20,7 @@
   --base-space-big: 20px;
   --base-space-medium: 10px;
   --base-space-small: 5px;
+
   --size-thumbnail: 130px;
 }
 
@@ -301,4 +302,50 @@ button {
   position: relative;
   bottom: 4px;
   margin-bottom: var(--base-space-big);
+}
+
+/* .my-work */
+.my-work {
+  background-color: var(--color-white);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: var(--base-space-bigger) var(--base-space-medium); /*아직 side는 padding안줌
+  */
+}
+
+.my-work__buttons {
+  margin: var(--base-space-medium) 0;
+}
+
+.my-work__buttons .btn {
+  border: 1px solid var(--color-light-black);
+  padding: var(--base-space-small);
+}
+
+.my-work__buttons .btn:hover {
+  background-color: var(--color-green);
+  color: var(--color-light-white);
+}
+
+.my-work__projects {
+  display: flex;
+  /*background-color: red;*/
+  width: 100%;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.my-work__projects > .project {
+  margin: var(--base-space-small);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #c9c9c9;
+  flex: 1 1 30%;
+}
+
+.my-work__projects > .project > img {
+  width: 80%;
+  padding: var(--base-space-medium);
 }
