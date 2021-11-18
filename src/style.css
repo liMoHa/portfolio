@@ -154,6 +154,7 @@ button {
 
 .about-me__stacks {
   display: flex;
+  justify-content: space-around;
   margin-bottom: var(--base-space-big);
 }
 
@@ -348,4 +349,48 @@ button {
 .my-work__projects > .project > img {
   width: 80%;
   padding: var(--base-space-medium);
+}
+
+/* .testimonial -> 완전 엉망 */
+.testimonial {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--color-gray);
+  padding: var(--base-space-bigger) var(--base-space-medium);
+}
+
+.testimonial .title {
+  align-self: center;
+}
+
+.testimonial .whoAndWord {
+  height: 100%;
+  display: flex;
+  margin-top: var(--base-space-medium);
+}
+
+.testimonial .who {
+  flex: 1 1 20%;
+  display: flex;
+}
+
+.testimonial .who img {
+  width: 100%;
+  max-width: 200px;
+}
+
+.testimonial .whoAndWord-2 .who {
+  justify-content: flex-end;
+}
+
+.testimonial .word {
+  flex: 1 1 80%;
+  background-color: var(--color-white);
+  display: flex;
+  align-items: center;
+}
+
+.testimonial .word p {
+  text-align: center;
+  color: var(--color-light-black);
 }
