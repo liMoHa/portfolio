@@ -34,8 +34,10 @@ li {
   list-style: none;
 }
 
-a {
+a,
+a:hover {
   text-decoration: none;
+  cursor: pointer;
 }
 
 button {
@@ -393,4 +395,46 @@ button {
 .testimonial .word p {
   text-align: center;
   color: var(--color-light-black);
+}
+
+/* .contact */
+.contact {
+  color: var(--color-white);
+  padding: var(--base-space-bigger) calc(var(--base-space-bigger) * 2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--color-light-green);
+}
+
+.contact .title {
+  color: var(--color-white);
+}
+
+.contact__buttons {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  width: 100%;
+}
+
+.contact__buttons .box {
+  flex: 1 1 30%;
+  margin: var(--base-space-medium);
+  max-width: 80px;
+}
+
+.contact__buttons .box a {
+  color: var(--color-white);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.contact__buttons .box a i {
+  font-size: var(--font-big);
+}
+
+.contact__copyright {
+  font-size: var(--base-space-small);
 }
