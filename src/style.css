@@ -43,9 +43,21 @@ button:hover {
   background-color: transparent;
 }
 
+h1 {
+  color: var(--color-black);
+  padding-top: var(--base-space-bigger);
+  padding-bottom: var(--base-space-medium);
+}
 /* h1, h2, p, span */
 h2 {
+  color: var(--color-black);
   font-size: 16px;
+  padding-bottom: var(--base-space-small);
+}
+
+p {
+  font-size: 14px;
+  padding-bottom: var(--base-space-medium);
 }
 /* home */
 .home {
@@ -102,11 +114,14 @@ h2 {
 }
 
 .home__description h1 {
+  color: var(--color-white);
   font-weight: 500;
   padding-bottom: var(--base-space-small);
+  padding-top: 0;
 }
 
 .home__description h2 {
+  color: var(--color-white);
   font-weight: 100;
   /*  */
 }
@@ -116,9 +131,74 @@ h2 {
   border: 1px solid var(--color-white);
   border-radius: 3px;
   padding: var(--base-space-medium);
-  margin: var(--base-space-big);
+  margin: var(--base-space-bigger);
+  transition: background-color 0.5s ease;
 }
 
 .home__description button:hover {
   background-color: var(--color-light-green);
+}
+
+/* about */
+.about {
+  background-color: var(--color-white);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding-bottom: var(--base-space-medium);
+}
+
+.about__description {
+  margin-bottom: var(--base-space-bigger);
+}
+
+.about__fields {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  margin-bottom: var(--base-space-medium);
+}
+
+.about__fields .filed {
+  flex: 1 1 30%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.about__fields .filed button {
+  width: 100px;
+  height: 100px;
+  border: 1px solid var(--color-dark-gray);
+  border-radius: 50%;
+  margin-bottom: var(--base-space-medium);
+}
+
+.about__fields .filed button:hover {
+  border: 1px solid var(--color-yellow);
+}
+
+.about__fields .filed button:hover i {
+  color: var(--color-yellow);
+}
+
+.about__fields .filed span:nth-child(2) {
+  font-size: var(--font-medium);
+  color: var(--color-black);
+}
+
+.about__fields .filed span:nth-child(3) {
+  font-size: var(--font-small);
+  color: var(--color-light-black);
+}
+
+.about__fields .filed button i {
+  font-size: var(--font-big);
+  color: var(--color-dark-gray);
+}
+
+.about__history {
+  padding: var(--base-space-big);
+  color: var(--color-light-black);
 }
