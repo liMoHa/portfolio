@@ -47,11 +47,12 @@ h1 {
   color: var(--color-black);
   padding-top: var(--base-space-bigger);
   padding-bottom: var(--base-space-medium);
+  font-size: var(--font-big);
 }
 /* h1, h2, p, span */
 h2 {
   color: var(--color-black);
-  font-size: 16px;
+  font-size: 18px;
   padding-bottom: var(--base-space-small);
 }
 
@@ -91,6 +92,7 @@ p {
 .home__logoAndNav .logoAndNav__nav-bar button li {
   color: var(--color-light-white);
   padding: var(--base-space-small);
+  margin: 0 var(--base-space-small);
   border-radius: 2px;
 }
 
@@ -123,7 +125,7 @@ p {
 
 .home__description h2 {
   color: var(--color-white);
-  font-weight: 100;
+  font-weight: 300;
   /*  */
 }
 
@@ -205,3 +207,125 @@ p {
 }
 
 /* skills */
+.skills {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background-color: var(--color-gray);
+}
+
+.skills__description {
+  margin-bottom: var(--base-space-big);
+}
+
+/* skills__skillBox */
+.skills__skillBox {
+  display: flex;
+  width: 90%;
+  justify-content: center;
+  margin-bottom: calc(var(--base-space-bigger) * 2);
+  color: var(--color-white);
+}
+
+.skills__skillBox .skillBox__skills {
+  background-color: var(--color-light-black);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding: var(--base-space-big) 0;
+}
+
+.skillBox__skills > span {
+  padding-bottom: var(--base-space-medium);
+}
+
+.skillBox__skills .skillSetBox {
+  width: 85%;
+}
+
+.skillBox__skills .skillSetBox span {
+  font-size: var(--font-smaller);
+}
+
+.skillBox__skills .skillSetBox .skillSetAndValue {
+  padding-bottom: var(--base-space-big);
+}
+
+.skillBox__skills .skillSetBox .skillSetAndValue .skillSet {
+  display: flex;
+  justify-content: space-between;
+}
+
+.skillBox__skills .skillSetBox .skillSetAndValue .value {
+  height: 3px;
+  background-color: var(--color-dark-gray);
+}
+
+.skillBox__skills .skillSetBox .skillSetAndValue .realValue {
+  height: 3px;
+  position: relative;
+  bottom: 3px;
+  background-color: rgb(236, 162, 49);
+}
+
+/* percentage */
+.skillBox__skills .skillSetBox .skillSetAndValue:nth-child(1) .realValue {
+  width: 99%;
+}
+
+.skillBox__skills .skillSetBox .skillSetAndValue:nth-child(2) .realValue {
+  width: 90%;
+}
+
+.skillBox__skills .skillSetBox .skillSetAndValue:nth-child(3) .realValue {
+  width: 80%;
+}
+
+.skillBox__skills .skillSetBox .skillSetAndValue:nth-child(4) .realValue {
+  width: 10%;
+}
+
+.skillBox__skills .skillSetBox .skillSetAndValue:nth-child(5) .realValue {
+  width: 0%;
+}
+
+/* skills__toolsAndEtc */
+.skills__toolsAndEtc {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+}
+
+.skills__toolsAndEtc .tools {
+  padding: var(--base-space-big) 0;
+  background-color: var(--color-dark-gray);
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 50%;
+}
+
+.skills__toolsAndEtc .tools span:nth-child(1) {
+  margin-bottom: var(--base-space-medium);
+}
+
+.skills__toolsAndEtc .tools span ~ span {
+  font-size: var(--font-smaller);
+}
+
+.skills__toolsAndEtc .etc {
+  flex: 1 1 50%;
+  padding: var(--base-space-big) 0;
+  display: flex;
+  flex-direction: column;
+  background-color: gray;
+}
+
+.skills__toolsAndEtc .etc span ~ span {
+  font-size: var(--font-smaller);
+}
+
+.skills__toolsAndEtc .etc span:nth-child(1) {
+  margin-bottom: var(--base-space-medium);
+}
