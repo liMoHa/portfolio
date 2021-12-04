@@ -21,7 +21,7 @@
   --base-space-medium: 10px;
   --base-space-small: 5px;
 
-  --size-thumbnail: 130px;
+  --size-thumbnail: 180px;
 }
 
 * {
@@ -63,6 +63,7 @@ p {
 .home {
   background-image: url("./image/background-img.png");
   background-size: cover;
+  padding: var(--base-space-bigger) 0;
 }
 
 /* home__logoAndNav */
@@ -202,3 +203,5 @@ p {
   padding: var(--base-space-big);
   color: var(--color-light-black);
 }
+
+/* skills */
