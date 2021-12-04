@@ -28,4 +28,97 @@
   font-family: "Noto Sans KR", sans-serif;
   padding: 0px;
   margin: 0px;
+  box-sizing: border-box;
+  /* 근데 이건 내가 요소의 사이즈를 정해준 게 아니면 의미가 없지 않나? 어짜피 자식요소의 패딩이 들어가면 그만큼 크기가 커질테니까 */
+}
+
+li {
+  list-style: none;
+}
+
+button,
+button:hover {
+  border: none;
+  cursor: pointer;
+  background-color: transparent;
+}
+
+/* h1, h2, p, span */
+h2 {
+  font-size: 16px;
+}
+/* home */
+.home {
+  background-image: url("./image/background-img.png");
+  background-size: cover;
+}
+
+/* home__logoAndNav */
+.home__logoAndNav {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* background-color: var(--color-green); */
+  /* 스크롤 내릴 때 색 주기 */
+  padding: var(--base-space-medium);
+}
+
+.home__logoAndNav .logoAndNav__logo {
+  color: var(--color-light-white);
+  font-size: var(--font-medium);
+}
+
+.home__logoAndNav .logoAndNav__logo::first-letter {
+  color: var(--color-yellow);
+}
+
+.home__logoAndNav .logoAndNav__nav-bar button li {
+  color: var(--color-light-white);
+  padding: var(--base-space-small);
+  border-radius: 2px;
+}
+
+.home__logoAndNav .logoAndNav__nav-bar button li:hover {
+  background-color: var(--color-light-green);
+  border: 1px solid var(--color-light-white);
+}
+
+/* home__description */
+.home__description {
+  padding-top: 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  /* background-color: rebeccapurple; */
+  color: var(--color-white);
+}
+
+.home__description img {
+  width: var(--size-thumbnail);
+}
+
+.home__description h1 {
+  font-weight: 500;
+  padding-bottom: var(--base-space-small);
+}
+
+.home__description h2 {
+  font-weight: 100;
+  /*  */
+}
+
+.home__description button {
+  color: var(--color-light-white);
+  border: 1px solid var(--color-white);
+  border-radius: 3px;
+  padding: var(--base-space-medium);
+  margin: var(--base-space-big);
+}
+
+.home__description button:hover {
+  background-color: var(--color-light-green);
 }
