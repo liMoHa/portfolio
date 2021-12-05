@@ -415,8 +415,9 @@ p {
 }
 
 .work__projects .project:nth-child(4) img {
-  width: 50%;
-  height: 70%;
+  width: 70%;
+  height: 80%;
+  left: 15%;
 }
 
 .work__projects .project span {
