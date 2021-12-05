@@ -18,7 +18,19 @@ window.addEventListener('load', ()=>{
         }
     }
 
+    function onMove(id){
+        const element = document.querySelector(`.${id}`);
+        element.scrollIntoView({behavior:'smooth', block:'center'});
+    }
+
     document.defaultView.addEventListener('scroll', onChangeColor)
+    
     const navBar = document.querySelector('.logoAndNav__nav-bar');
+    navBar.addEventListener('click', (e)=>{
+        if(e.target.tagName === 'LI'){
+            // console.log(e);
+            onMove(e.target.dataset.id);
+        }
+    })
 })
 
