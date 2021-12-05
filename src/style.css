@@ -144,7 +144,6 @@ p {
 
 /* about */
 .about {
-  background-color: var(--color-white);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -328,4 +327,134 @@ p {
 
 .skills__toolsAndEtc .etc span:nth-child(1) {
   margin-bottom: var(--base-space-medium);
+}
+
+/* work */
+.work {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.work span {
+  margin-bottom: var(--base-space-big);
+}
+
+.work__buttons {
+  display: flex;
+}
+
+.work__buttons button {
+  border: 1px solid var(--color-dark-gray);
+  border-radius: 2px;
+  position: relative;
+  transition: all 0.2s ease;
+}
+
+.work__buttons button:hover,
+.work__buttons .all {
+  background-color: var(--color-green);
+}
+
+.work__buttons button span:nth-child(1) {
+  display: inline-block;
+  margin: auto;
+  padding: var(--base-space-medium) var(--base-space-bigger);
+}
+
+.work__buttons button span:nth-child(2) {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  transform: translateY(-50%);
+  margin: 0;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: transparent;
+  color: transparent;
+  transition: all 0.2s ease-in-out;
+}
+
+.work__buttons button:hover span:nth-child(2) {
+  color: white;
+  top: 50%;
+  background-color: var(--color-yellow);
+}
+
+/* 이 부분 수정해야 함. */
+.work__buttons .active span:nth-child(2) {
+  color: white;
+  top: 50%;
+  background-color: var(--color-yellow);
+}
+
+.work__projects {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: var(--base-space-big);
+  margin-bottom: var(--base-space-bigger);
+  /* background-color: rebeccapurple; */
+  width: 80%;
+}
+
+.work__projects .project {
+  width: 250px;
+  height: 250px;
+  background-color: var(--color-gray);
+  margin: 2px;
+  cursor: pointer;
+  position: relative;
+}
+
+.work__projects .project img {
+  width: 100%;
+  position: relative;
+  top: 20%;
+}
+
+.work__projects .project:nth-child(4) img {
+  width: 50%;
+  height: 70%;
+}
+
+.work__projects .project span {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  text-align: center;
+  line-height: 200px;
+  background-color: transparent;
+  /* background transparent로 안해놓으면 애니메이션 적용 안 될 거임 */
+  color: transparent;
+  opacity: 70%;
+  transition: all 0.2s ease;
+}
+
+.work__projects .project:hover span {
+  background-color: black;
+  color: var(--color-white);
+}
+
+.work__projects .project a {
+  color: transparent;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -30%);
+  font-size: 30px;
+  transition: color 0.2s ease;
+}
+
+.work__projects .project:hover a {
+  color: var(--color-white);
+}
+
+.work__projects .project a:hover {
+  transform: translate(-50%, -30%) scale(1.1, 1.1);
+  color: var(--color-yellow);
 }
