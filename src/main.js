@@ -5,6 +5,9 @@
 // 5. 필터링 될 때 애니메이션도 추가.
 
 window.addEventListener('load', ()=>{
+    const navBar = document.querySelector('.logoAndNav__nav-bar');
+    const workBtn = document.querySelector('.work__buttons');
+
     function onChangeColor(){
         const logoAndNav = document.querySelector('.home__logoAndNav');
         const navRectY = document.documentElement.getBoundingClientRect().y;
@@ -23,14 +26,52 @@ window.addEventListener('load', ()=>{
         element.scrollIntoView({behavior:'smooth', block:'center'});
     }
 
-    document.defaultView.addEventListener('scroll', onChangeColor)
+    function loadItem(){
+        return fetch('../data/items.json')
+        .then((response)=>{
+            return response.json();
+        })
+        .then((json)=>{
+            return json.items;
+        })
+    }
     
-    const navBar = document.querySelector('.logoAndNav__nav-bar');
+    function createElement(item){
+        return `
+        <div class="project">
+            <img src=${item['img']} />
+            <span>${item['description']}</span>
+            <a href="https://github.com/liMoHa" target="_blank">
+                <i class="fab fa-github-square"></i>
+            </a>
+        </div>
+        `
+    }
+
+    function display(items){
+        const elements = items.map(createElement).join('');
+        const projectParent = document.querySelector('.work__projects');
+        projectParent.innerHTML = elements;
+    }
+
+    function onFilter(id){
+        itemPromise.then((json)=>{
+            let filteredItems = json.filter((item)=>{
+                return item['field'] === id || id === 'all';
+            });
+            display(filteredItems);
+        });
+    }
+
+    const itemPromise = loadItem();
+    onFilter('all');
+
+    document.defaultView.addEventListener('scroll', onChangeColor);
     navBar.addEventListener('click', (e)=>{
         if(e.target.tagName === 'LI'){
-            // console.log(e);
             onMove(e.target.dataset.id);
         }
     })
+    workBtn.addEventListener('click',(e)=> onFilter(e.target.dataset.id));
 })
 
