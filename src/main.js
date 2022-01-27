@@ -1,23 +1,27 @@
-// 1. 스크롤시 nav bar background-color 변경시키기 ✅
-// 2. 메뉴 버튼 클릭시 해당 위치로 이동 ✅
-// 3. contact me 버튼 눌렀을 때 내 이메일로 연동
-// 4. mywork: button클릭시 필터링
-// 5. 필터링 될 때 애니메이션도 추가.
+// 1. 스크롤시 nav bar background-color 변경시키기 
+// 2. 메뉴 버튼 클릭시 해당 위치로 이동 
+// 3. mywork: button클릭시 필터링 + 필터링 될 때 애니메이션도 추가.
+// 4. 스크롤 내릴 때 점점 투명하게 만들기 -> 전체를 투명하게
+'use strict'
 
 window.addEventListener('load', ()=>{
     const navBar = document.querySelector('.logoAndNav__nav-bar');
     const workBtn = document.querySelector('.work__buttons');
+    const contactMe = document.querySelector('.home__description__contact');
 
     function onChangeColor(){
         const logoAndNav = document.querySelector('.home__logoAndNav');
-        const navRectY = document.documentElement.getBoundingClientRect().y;
-        
-        if(navRectY === 0){
-            console.log(navRectY);
-            logoAndNav.style.backgroundColor = "transparent";
+        const logoAndNavRect = logoAndNav.getBoundingClientRect();
+        // element의 사이즈를 알고 싶음 방법 1. getBoundingClientRect 2. offset
+        // 여기 다시보자. 여기 음수 사용 안 하고 다시 해야 함. -> window.scrollY
+        console.log(window.scrollY);
+
+        if(window.scrollY < logoAndNavRect.height){
+            // 이렇게 하지말고 classList.add로 클래스 추가해서 변경해보자.
+            logoAndNav.classList.remove("nonTransparent");
         }
         else{
-            logoAndNav.style.backgroundColor = "var(--color-light-green)";
+            logoAndNav.classList.add("nonTransparent");
         }
     }
 
@@ -68,10 +72,16 @@ window.addEventListener('load', ()=>{
 
     document.defaultView.addEventListener('scroll', onChangeColor);
     navBar.addEventListener('click', (e)=>{
-        if(e.target.tagName === 'LI'){
+        if(e.target.tagName !== 'LI'){
+            return;
+        }
+        onMove(e.target.dataset.id);
+    });
+    contactMe.addEventListener('click', (e)=>{
+        if(e.target.dataset.id === "contact"){
             onMove(e.target.dataset.id);
         }
-    })
+    });
     workBtn.addEventListener('click',(e)=> onFilter(e.target.dataset.id));
 })
 
