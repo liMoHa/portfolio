@@ -65,6 +65,26 @@ a,
 a:hover {
   text-decoration: none;
 }
+
+/* arrow up*/
+.arrowUp i {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  font-size: 40px;
+  color: var(--color-green);
+  opacity: 0;
+  cursor: pointer;
+  transition: opacity 0.2s ease-in;
+  pointer-events: none;
+}
+
+.arrowUp.visible i {
+  pointer-events: auto;
+  opacity: 1;
+  transition: opacity 0.2s ease-in;
+}
+
 /* home */
 .home {
   background-image: url("./image/background-img.png");

@@ -9,6 +9,9 @@ window.addEventListener('load', ()=>{
     const workBtn = document.querySelector('.work__buttons');
     const contactMe = document.querySelector('.home__description__contact');
     const homeDescription = document.querySelector('.home__description');
+    const arrowUp = document.querySelector('.arrowUp');
+    const home = document.querySelector('.home');
+    const homeHeight = home.getBoundingClientRect().height;
 
     function onChangeColor(){
         const logoAndNav = document.querySelector('.home__logoAndNav');
@@ -25,23 +28,25 @@ window.addEventListener('load', ()=>{
         }
     }
 
-    function onMove(id){
-        const element = document.querySelector(`.${id}`);
-        element.scrollIntoView({behavior:'smooth', block:'center'});
+    function onMove(name){
+        const element = document.querySelector(`.${name}`);
+        element.scrollIntoView({behavior:'smooth', block:'end'});
     }
 
     function onChangeOpacity(){
-        const homeDescriptionRect = homeDescription.getBoundingClientRect();
-        console.log(homeDescriptionRect);
-        console.log(window.scrollY);
+        let opacity = 1 - window.scrollY/homeHeight;   
+        // 불투명도 변경시키기
+        // opacity계산에 scrollY값을 이용            
+        homeDescription.style.opacity = opacity;
+    }
 
-        let opacity = 1 - window.scrollY/500;
-        // 여기 무슨 값을 넣어야 될지 몰라서(기준점을 몰라서) 일단 20 넣음.
-        if(window.scrollY > 20){
-            
-            // 불투명도 변경시키기
-            // opacity계산에 scrollY값을 이용            
-            homeDescription.style.opacity = opacity;
+    function onShowArrow(){
+        const point = homeHeight / 2;
+        if(window.scrollY >= point){
+            arrowUp.classList.add("visible");
+        }
+        else{
+            arrowUp.classList.remove("visible");
         }
     }
 
@@ -86,8 +91,12 @@ window.addEventListener('load', ()=>{
     onFilter('all');
 
     // 페이지 전체에 적용되는 이벤트를 등록할 땐 뭘 쓰지..?
-    document.defaultView.addEventListener('scroll', onChangeColor);
-    window.addEventListener('scroll', onChangeOpacity);
+    document.addEventListener('scroll', onChangeColor);
+    document.addEventListener('scroll', onChangeOpacity);
+    document.addEventListener('scroll', onShowArrow);
+    arrowUp.addEventListener('click', (e)=>{
+        onMove("home");
+    });
 
     navBar.addEventListener('click', (e)=>{
         if(e.target.tagName !== 'LI'){
