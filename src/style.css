@@ -434,8 +434,14 @@ a:hover {
   justify-content: center;
   margin-top: var(--base-space-big);
   margin-bottom: var(--base-space-bigger);
-  /* background-color: rebeccapurple; */
   width: 80%;
+  transition: all 200ms ease-in;
+}
+
+.work__projects.anim-out {
+  opacity: 0.2;
+  transform: scale(0.9, 0.9);
+  transition: all 200ms ease-out;
 }
 
 .work__projects .project {

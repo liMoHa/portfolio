@@ -77,10 +77,16 @@ window.addEventListener("load", () => {
   onFilter("all");
 
   function onFilter(id) {
-    itemPromise.then((json) => {
-      let filteredItems = json.filter(item => item["field"] === id || id === "all");
-      display(filteredItems);
-    });
+    const workProjects = document.querySelector('.work__projects');
+    workProjects.classList.add('anim-out');
+    setTimeout(()=>{
+        workProjects.classList.remove('anim-out');
+        itemPromise.then((json) => {
+            let filteredItems = json.filter(item => item["field"] === id || id === "all");
+            display(filteredItems);
+          });
+    }, 150);
+    
   }
 
   const btnArray = document.querySelectorAll('.work__buttons button');
