@@ -210,10 +210,13 @@ a:hover {
   border: 1px solid var(--color-dark-gray);
   border-radius: 50%;
   margin-bottom: var(--base-space-medium);
+  transition: all 0.2s ease;
 }
 
 .about__fields .filed button:hover {
   border: 1px solid var(--color-yellow);
+  transform: rotate(30deg);
+  transition: all 0.2s ease;
 }
 
 .about__fields .filed button:hover i {
