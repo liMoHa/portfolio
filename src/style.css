@@ -391,7 +391,7 @@ a:hover {
 }
 
 .work__buttons button:hover,
-.work__buttons .all {
+.work__buttons button.active {
   background-color: var(--color-green);
 }
 
