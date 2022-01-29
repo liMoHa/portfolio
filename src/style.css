@@ -34,6 +34,7 @@
 
 li {
   list-style: none;
+  cursor: pointer;
 }
 
 button,
@@ -121,18 +122,19 @@ a:hover {
   color: var(--color-yellow);
 }
 
-.home__logoAndNav .logoAndNav__nav-bar button {
-  margin: 0 var(--base-space-small);
+.home__logoAndNav .logoAndNav__nav-bar {
+  display: flex;
+  font-size: var(--font-small);
 }
-
-.home__logoAndNav .logoAndNav__nav-bar button li {
+.home__logoAndNav .logoAndNav__nav-bar li {
+  margin: 0 var(--base-space-small);
   color: var(--color-light-white);
   padding: var(--base-space-small);
   border-radius: 2px;
   border: 1px solid transparent;
 }
 
-.home__logoAndNav .logoAndNav__nav-bar button li:hover {
+.home__logoAndNav .logoAndNav__nav-bar li:hover {
   background-color: #9fd8c8;
   border: 1px solid var(--color-light-white);
 }
