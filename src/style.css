@@ -669,4 +669,10 @@ a:hover {
   #cancle.active {
     display: block;
   }
+
+  /* project */
+  .work__projects .project {
+    width: 400px;
+    height: 400px;
+  }
 }
