@@ -139,7 +139,7 @@ a:hover {
   border-color: var(--color-light-white);
 }
 
-.home__logoAndNav .logoAndNav__nav-bar li.active {
+.home__logoAndNav .logoAndNav__nav-bar li.selected {
   border-color: var(--color-light-white);
 }
 
@@ -396,7 +396,7 @@ a:hover {
 }
 
 .work__buttons button:hover,
-.work__buttons button.active {
+.work__buttons button.selected {
   background-color: var(--color-green);
 }
 
@@ -427,7 +427,7 @@ a:hover {
 }
 
 /* 이 부분 수정해야 함. */
-.work__buttons .active span:nth-child(2) {
+.work__buttons .selected span:nth-child(2) {
   color: white;
   top: 50%;
   background-color: var(--color-yellow);
@@ -604,4 +604,53 @@ a:hover {
 .contact p:nth-child(4) {
   margin-bottom: var(--base-space-medium);
   font-size: var(--font-smaller);
+}
+
+.fa-bars {
+  display: none;
+}
+
+/* media querry */
+@media (max-width: 590px) {
+  .logoAndNav__logo {
+    margin: 0 0 10px 10px;
+  }
+
+  .home__logoAndNav {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px 0 0;
+  }
+
+  .home__logoAndNav.active {
+    background-color: var(--color-light-green);
+  }
+
+  .logoAndNav__nav-bar {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
+  .logoAndNav__nav-bar li {
+    width: 100%;
+    text-align: center;
+    /* hidden list */
+    display: none;
+  }
+
+  .logoAndNav__nav-bar.active li {
+    display: block;
+  }
+
+  .fa-bars {
+    display: block;
+    position: fixed;
+    top: 14px;
+    right: 14px;
+    color: var(--color-light-white);
+    font-size: var(--font-medium);
+    cursor: pointer;
+    z-index: 1;
+  }
 }

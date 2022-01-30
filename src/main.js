@@ -73,8 +73,6 @@ window.addEventListener("load", () => {
     projectParent.innerHTML = elements;
   }
 
-  const itemPromise = loadItem();
-  onFilter("all");
 
   function onFilter(id) {
     const workProjects = document.querySelector('.work__projects');
@@ -88,18 +86,13 @@ window.addEventListener("load", () => {
     }, 150);
     
   }
-
   
-  function onActiveBtn(id, arr){
-      arr.forEach(btn => {
-          if(btn.dataset.id === id || btn.className === `${id} active`){
-              btn.classList.add('active');
-              console.log(btn.dataset.id, id);
-          }
-          else{
-              btn.classList.remove('active');
-          }
-      })
+  function onActiveBtn(active, element){
+    if(active.className === element.className){
+        return;
+    }
+    element.classList.add('selected');
+    active.classList.remove('selected'); 
   }
   // 페이지 전체에 적용되는 이벤트를 등록할 땐 뭘 쓰지..? -> document
   document.addEventListener("scroll", onChangeColor);
@@ -109,24 +102,37 @@ window.addEventListener("load", () => {
     onMove("home");
   });
 
-  const menuArray = document.querySelectorAll('.logoAndNav__nav-bar li');
   navBar.addEventListener("click", (e) => {
     const id = e.target.dataset.id;
+    const active = document.querySelector('.logoAndNav__nav-bar li.selected');
     if (e.target.tagName !== "LI") {
       return;
     }
     onMove(id);
-    onActiveBtn(id, menuArray);
+    onActiveBtn(active, e.target);
   });
   contactMe.addEventListener("click", (e) => {
     if (e.target.dataset.id === "contact") {
       onMove(e.target.dataset.id);
     }
   });
-  const btnArray = document.querySelectorAll('.work__buttons button');
+  
+  const itemPromise = loadItem();
+  onFilter("all");
+
   workBtn.addEventListener("click", (e) => {
       const id = e.target.dataset.id;
+      const active = document.querySelector('.work__buttons button.selected');
+      console.log(e);
       onFilter(id);
-      onActiveBtn(id, btnArray);
+      onActiveBtn(active, e.target.parentElement);
+  });
+
+  const toggleBtn = document.querySelector('.fa-bars');
+  const logoAndNav = document.querySelector('.home__logoAndNav');
+  toggleBtn.addEventListener('click',()=>{
+    // const를 여기에 적는 게 좋을까 밖에 적는 게 좋을까?
+    logoAndNav.classList.toggle('active');
+    navBar.classList.toggle('active');
   });
 });
