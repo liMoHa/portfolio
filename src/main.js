@@ -29,7 +29,7 @@ window.addEventListener("load", () => {
 
   function onMove(name) {
     const element = document.querySelector(`.${name}`);
-    element.scrollIntoView({ behavior: "smooth", block: "end" });
+    element.scrollIntoView({ behavior: "smooth", block: "start" });
   }
 
   function onChangeOpacity() {

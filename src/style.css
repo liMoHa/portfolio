@@ -45,7 +45,7 @@ button:hover {
 
 h1 {
   color: var(--color-black);
-  padding-top: var(--base-space-bigger);
+  padding-top: 75px;
   padding-bottom: var(--base-space-medium);
   font-size: var(--font-big);
 }
@@ -420,13 +420,7 @@ a:hover {
   transition: all 0.2s ease-in-out;
 }
 
-.work__buttons button:hover span:nth-child(2) {
-  color: white;
-  top: 50%;
-  background-color: var(--color-yellow);
-}
-
-/* 이 부분 수정해야 함. */
+.work__buttons button:hover span:nth-child(2),
 .work__buttons .selected span:nth-child(2) {
   color: white;
   top: 50%;
@@ -464,6 +458,7 @@ a:hover {
   top: 20%;
 }
 
+/* 여기 수정 필요 */
 .work__projects .project span {
   margin: 0;
   width: 100%;
@@ -472,7 +467,6 @@ a:hover {
   top: 0;
   left: 0;
   text-align: center;
-  line-height: 200px;
   background-color: transparent;
   /* background transparent로 안해놓으면 애니메이션 적용 안 될 거임 */
   color: transparent;
@@ -523,12 +517,8 @@ a:hover {
   padding: var(--base-space-medium) 0;
 }
 
-.testimonial__outerBox .innerBox:nth-child(2) {
-  flex-direction: row-reverse;
-}
-
 .testimonial__outerBox .innerBox .person {
-  flex: 1 1 20%;
+  width: 100px;
 }
 
 .testimonial__outerBox .innerBox .person img {
@@ -630,6 +620,24 @@ a:hover {
 
 /* media querry */
 @media (max-width: 590px) {
+  /* font size */
+  h1 {
+    padding-top: 60px;
+    padding-bottom: var(--base-space-medium);
+    font-size: var(--font-medium);
+  }
+  /* h1, h2, p, span */
+  h2 {
+    color: var(--color-black);
+    font-size: 15px;
+    padding-bottom: var(--base-space-small);
+  }
+
+  p {
+    font-size: 12px;
+    padding-bottom: var(--base-space-medium);
+  }
+
   .logoAndNav__logo {
     margin: 0 0 10px 10px;
   }
@@ -670,6 +678,27 @@ a:hover {
     display: block;
   }
 
+  /* about */
+  .about__description p {
+    padding: 0;
+  }
+  .about__fields {
+    flex-direction: column;
+  }
+
+  .about__fields .filed {
+    margin-bottom: 10px;
+  }
+
+  .about__history {
+    padding: 0;
+    margin-bottom: 20px;
+  }
+
+  .about__history li {
+    font-size: 12px;
+  }
+
   /* skills */
   .skills__skillBox {
     flex-direction: column;
@@ -684,21 +713,77 @@ a:hover {
     width: 100%;
   }
   .work__projects .project {
-    width: 180px;
-    height: 180px;
+    width: 100%;
+    height: 100%;
+    margin: 3px 15px;
   }
 
+  .work__buttons {
+    flex-direction: column;
+  }
+
+  .work__buttons button {
+    margin-bottom: 3px;
+  }
   .work__buttons button span:nth-child(1) {
-    padding: 5px 25px 5px 10px;
-    font-size: 10px;
+    padding: 5px 95px;
+    font-size: 15px;
   }
 
   .work__buttons button span:nth-child(2) {
-    width: 14px;
-    height: 14px;
-    right: 5px;
-    transform: translateY(-40%);
-    font-size: 8px;
-    line-height: 14px;
+    width: 20px;
+    height: 20px;
+    right: 10px;
+    transform: translateY(-48%);
+    font-size: 14px;
+    line-height: 18px;
+  }
+
+  .work__projects .project:hover span {
+    font-size: 13px;
+  }
+
+  .work__projects .project a {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -80%);
+    font-size: 25px;
+    transition: color 0.2s ease;
+    overflow-x: hidden;
+  }
+
+  .work__projects .project a:hover {
+    transform: translate(-50%, -80%);
+    font-size: 25px;
+    transition: color 0.2s ease;
+  }
+  /* testimonal */
+
+  .testimonial__outerBox {
+    padding: 0 10px;
+  }
+  .testimonial__outerBox .innerBox {
+    flex-direction: column;
+  }
+
+  .testimonial__outerBox .innerBox .person {
+    width: 130px;
+  }
+
+  .testimonial__outerBox .innerBox p {
+    order: 1;
+  }
+
+  .testimonial__outerBox .innerBox:nth-child(1) p {
+    margin: 0;
+  }
+
+  .testimonial__outerBox .innerBox:nth-child(2) p {
+    margin: 0;
+  }
+
+  /* arrow up button */
+  .arrowUp i {
+    font-size: 30px;
   }
 }
