@@ -100,6 +100,10 @@ window.addEventListener("load", () => {
   document.addEventListener("scroll", onShowArrow);
   arrowUp.addEventListener("click", (e) => {
     onMove("home");
+    const active = document.querySelector('.logoAndNav__nav-bar li.selected');
+    const home = document.querySelector('.logoAndNav__nav-bar li[data-id=home]');
+    console.log(home);
+    onActiveBtn(active, home);
   });
 
   navBar.addEventListener("click", (e) => {
