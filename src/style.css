@@ -606,7 +606,25 @@ a:hover {
   font-size: var(--font-smaller);
 }
 
-.fa-bars {
+#bar {
+  position: fixed;
+  top: 14px;
+  right: 14px;
+  color: var(--color-light-white);
+  font-size: var(--font-medium);
+  cursor: pointer;
+  z-index: 1;
+  display: none;
+}
+
+#cancle {
+  position: fixed;
+  top: 14px;
+  right: 16px;
+  color: var(--color-light-white);
+  font-size: var(--font-medium);
+  cursor: pointer;
+  z-index: 1;
   display: none;
 }
 
@@ -643,14 +661,11 @@ a:hover {
     display: block;
   }
 
-  .fa-bars {
+  #bar.active {
     display: block;
-    position: fixed;
-    top: 14px;
-    right: 14px;
-    color: var(--color-light-white);
-    font-size: var(--font-medium);
-    cursor: pointer;
-    z-index: 1;
+  }
+
+  #cancle.active {
+    display: block;
   }
 }

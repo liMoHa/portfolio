@@ -128,11 +128,21 @@ window.addEventListener("load", () => {
       onActiveBtn(active, e.target.parentElement);
   });
 
-  const toggleBtn = document.querySelector('.fa-bars');
+  const toggleBtn = document.querySelector('#bar');
   const logoAndNav = document.querySelector('.home__logoAndNav');
-  toggleBtn.addEventListener('click',()=>{
+  const cancleBtn = document.querySelector('#cancle');
+  toggleBtn.addEventListener('click',(e)=>{
     // const를 여기에 적는 게 좋을까 밖에 적는 게 좋을까?
-    logoAndNav.classList.toggle('active');
-    navBar.classList.toggle('active');
+    logoAndNav.classList.add('active');
+    navBar.classList.add('active');
+    e.target.classList.remove('active');
+    cancleBtn.classList.add('active');
   });
+ 
+  cancleBtn.addEventListener('click', (e)=> {
+    logoAndNav.classList.remove('active');
+    navBar.classList.remove('active');
+    e.target.classList.remove('active');
+    toggleBtn.classList.add('active');
+  })
 });
