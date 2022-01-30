@@ -34,7 +34,6 @@
 
 li {
   list-style: none;
-  cursor: pointer;
 }
 
 button,
@@ -127,6 +126,7 @@ a:hover {
   font-size: var(--font-small);
 }
 .home__logoAndNav .logoAndNav__nav-bar li {
+  cursor: pointer;
   margin: 0 var(--base-space-small);
   color: var(--color-light-white);
   padding: var(--base-space-small);
@@ -670,6 +670,15 @@ a:hover {
     display: block;
   }
 
+  /* skills */
+  .skills__skillBox {
+    flex-direction: column;
+  }
+
+  .skills__toolsAndEtc {
+    flex-direction: row;
+    width: 100%;
+  }
   /* project */
   .work__projects .project {
     width: 400px;
