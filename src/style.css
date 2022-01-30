@@ -684,7 +684,21 @@ a:hover {
     width: 100%;
   }
   .work__projects .project {
-    width: 400px;
-    height: 400px;
+    width: 180px;
+    height: 180px;
+  }
+
+  .work__buttons button span:nth-child(1) {
+    padding: 5px 25px 5px 10px;
+    font-size: 10px;
+  }
+
+  .work__buttons button span:nth-child(2) {
+    width: 14px;
+    height: 14px;
+    right: 5px;
+    transform: translateY(-40%);
+    font-size: 8px;
+    line-height: 14px;
   }
 }
