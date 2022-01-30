@@ -95,9 +95,7 @@ window.addEventListener("load", () => {
     active.classList.remove('selected'); 
   }
   // 페이지 전체에 적용되는 이벤트를 등록할 땐 뭘 쓰지..? -> document
-  document.addEventListener("scroll", onChangeColor);
-  document.addEventListener("scroll", onChangeOpacity);
-  document.addEventListener("scroll", onShowArrow);
+  
   arrowUp.addEventListener("click", (e) => {
     onMove("home");
     const active = document.querySelector('.logoAndNav__nav-bar li.selected');
@@ -148,5 +146,22 @@ window.addEventListener("load", () => {
     navBar.classList.remove('active');
     e.target.classList.remove('active');
     toggleBtn.classList.add('active');
+  })
+
+  document.addEventListener('scroll',()=>{
+    onChangeColor();
+    onChangeOpacity();
+    onShowArrow();
+    // hide menu when scrolling
+    const check = document.querySelector('#cancle.active');
+    if(check == null){
+        return;
+    }
+    else{
+        logoAndNav.classList.remove('active');
+        navBar.classList.remove('active');
+        cancleBtn.classList.remove('active');
+        toggleBtn.classList.add('active');
+    }
   })
 });

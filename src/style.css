@@ -680,6 +680,9 @@ a:hover {
     width: 100%;
   }
   /* project */
+  .work__projects {
+    width: 100%;
+  }
   .work__projects .project {
     width: 400px;
     height: 400px;
