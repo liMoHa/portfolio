@@ -24,7 +24,6 @@ window.addEventListener("load", () => {
     // 여기 다시보자. 여기 음수 사용 안 하고 다시 해야 함. -> window.scrollY
 
     if (window.scrollY < logoAndNavRect.height) {
-      // 이렇게 하지말고 classList.add로 클래스 추가해서 변경해보자.
       logoAndNav.classList.remove("nonTransparent");
     } else {
       logoAndNav.classList.add("nonTransparent");
@@ -208,7 +207,6 @@ window.addEventListener("load", () => {
 
   // wheel event가 적용 안되는 이유?
   window.addEventListener('wheel', ()=>{
-      console.log('wheel');
       // 스크롤이 맨 위일 때
       if(window.scrollY === 0){
           navIndex = 0;
