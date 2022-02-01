@@ -54,46 +54,24 @@ window.addEventListener("load", () => {
     }
   }
 
-  // filtering
-  function loadItem() {
-    return fetch("../data/items.json")
-      .then(response => response.json())
-      .then(json => json.items);
-  }
-
-  function createElement(item) {
-    return `
-        <div class="project">
-            <img src=${item["img"]} />
-            <span>${item["description"]}</span>
-            <a href="https://github.com/liMoHa" target="_blank">
-                <i class="fab fa-github-square"></i>
-            </a>
-        </div>
-        `;
-  }
-
-  function display(items) {
-    const elements = items.map(createElement).join("");
-    const projectParent = document.querySelector(".work__projects");
-    projectParent.innerHTML = elements;
-  }
-
-
-  function onFilter(id) {
-    const workProjects = document.querySelector('.work__projects');
+  const workProjects = document.querySelector('.work__projects');
+  const projects = document.querySelectorAll('.work__projects .project');
+  function onFilter(field){
     workProjects.classList.add('anim-out');
     setTimeout(()=>{
         workProjects.classList.remove('anim-out');
-        itemPromise.then((json) => {
-            let filteredItems = json.filter(item => item["field"] === id || id === "all");
-            display(filteredItems);
-          });
-    }, 150);
-    
+        projects.forEach(project => {
+          if(field === 'all' || project.dataset.field === field){
+            project.classList.remove('invisible');
+          }
+          else{
+            project.classList.add('invisible');
+          }
+        });
+      }, 150);   
   }
-  
-  //여기 다음에 작성할 때는 더 효율적이게 작성하자. 
+
+  //여기 다음에 작성할 때는 더 효율적이게 작성하자. -> like slectNavItem
   function onActiveBtn(active, element){
     // 버튼 한 번 더 클릭시 버그 발생 방지
     if(active.className === element.className){
@@ -113,11 +91,15 @@ window.addEventListener("load", () => {
     currentSelectedItem = selected;
   }
   // 페이지 전체에 적용되는 이벤트를 등록할 땐 뭘 쓰지..? -> document
-  
   arrowUp.addEventListener("click", (e) => {
     onMove("home");
   });
 
+  // when click logo
+  const logo = document.querySelector('.logoAndNav__logo');
+  logo.addEventListener('click', ()=>{
+    onMove('home');
+  })
   navBar.addEventListener("click", (e) => {
     const id = e.target.dataset.id;
     if (e.target.tagName !== "LI") {
@@ -132,9 +114,7 @@ window.addEventListener("load", () => {
     }
   });
   
-  const itemPromise = loadItem();
-  onFilter("all");
-
+  // change to static viersion
   workBtn.addEventListener("click", (e) => {
       const id = e.target.dataset.id;
       const active = document.querySelector('.work__buttons button.selected');

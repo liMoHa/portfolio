@@ -11,17 +11,17 @@
   --color-yellow: #febf00;
 
   /* size */
-  --font-big: 28px;
-  --font-medium: 20px;
-  --font-small: 14px;
-  --font-smaller: 11px;
+  --font-big: 32px;
+  --font-medium: 24px;
+  --font-small: 18px;
+  --font-smaller: 15px;
 
   --base-space-bigger: 30px;
   --base-space-big: 20px;
   --base-space-medium: 10px;
   --base-space-small: 5px;
 
-  --size-thumbnail: 180px;
+  --size-thumbnail: 300px;
 }
 
 * {
@@ -52,12 +52,12 @@ h1 {
 /* h1, h2, p, span */
 h2 {
   color: var(--color-black);
-  font-size: 18px;
-  padding-bottom: var(--base-space-small);
+  font-size: 20px;
+  padding-bottom: var(--base-space-big);
 }
 
 p {
-  font-size: 14px;
+  font-size: 15px;
   padding-bottom: var(--base-space-medium);
 }
 
@@ -72,7 +72,7 @@ a:hover {
   right: 20px;
   bottom: 20px;
   font-size: 40px;
-  color: var(--color-green);
+  color: var(--color-yellow);
   opacity: 0;
   cursor: pointer;
   transition: opacity 0.2s ease-in;
@@ -82,14 +82,18 @@ a:hover {
 .arrowUp.visible i {
   pointer-events: auto;
   opacity: 1;
-  transition: opacity 0.2s ease-in;
+  transition: all 0.2s ease-in;
 }
 
+.arrowUp.visible i:hover {
+  transform: scale(1.1, 1.1);
+  transition: transform 0.2s ease;
+}
 /* home */
 .home {
   background-image: url("./image/background-img.png");
   background-size: cover;
-  padding: var(--base-space-bigger) 0;
+  padding: 55px 0;
 }
 
 /* home__logoAndNav */
@@ -115,6 +119,7 @@ a:hover {
 .home__logoAndNav .logoAndNav__logo {
   color: var(--color-light-white);
   font-size: var(--font-medium);
+  cursor: pointer;
 }
 
 .home__logoAndNav .logoAndNav__logo::first-letter {
@@ -123,7 +128,7 @@ a:hover {
 
 .home__logoAndNav .logoAndNav__nav-bar {
   display: flex;
-  font-size: var(--font-small);
+  font-size: var(--font-smaller);
 }
 .home__logoAndNav .logoAndNav__nav-bar li {
   cursor: pointer;
@@ -172,7 +177,7 @@ a:hover {
 
 .home__description button {
   color: var(--color-light-white);
-  border: 1px solid var(--color-white);
+  border: 2px solid var(--color-white);
   border-radius: 3px;
   padding: var(--base-space-medium);
   margin: var(--base-space-bigger);
@@ -200,7 +205,7 @@ a:hover {
   display: flex;
   width: 100%;
   justify-content: center;
-  margin-bottom: var(--base-space-medium);
+  margin-bottom: var(--base-space-bigger);
 }
 
 .about__fields .filed {
@@ -211,8 +216,8 @@ a:hover {
 }
 
 .about__fields .filed button {
-  width: 100px;
-  height: 100px;
+  width: 150px;
+  height: 150px;
   border: 1px solid var(--color-dark-gray);
   border-radius: 50%;
   margin-bottom: var(--base-space-medium);
@@ -240,12 +245,16 @@ a:hover {
 }
 
 .about__fields .filed button i {
-  font-size: var(--font-big);
+  font-size: 40px;
   color: var(--color-dark-gray);
 }
 
+.about__fields .filed button .fa-html5 {
+  font-size: 50px;
+}
 .about__history {
-  padding: var(--base-space-big);
+  padding: var(--base-space-bigger);
+  margin-bottom: 60px;
   color: var(--color-light-black);
 }
 
@@ -267,7 +276,7 @@ a:hover {
   display: flex;
   width: 90%;
   justify-content: center;
-  margin-bottom: calc(var(--base-space-bigger) * 2);
+  margin-bottom: calc(var(--base-space-bigger) * 5);
   color: var(--color-white);
 }
 
@@ -277,7 +286,7 @@ a:hover {
   flex-direction: column;
   align-items: center;
   width: 100%;
-  padding: var(--base-space-big) 0;
+  padding: var(--base-space-bigger) 0;
 }
 
 .skillBox__skills > span {
@@ -293,7 +302,7 @@ a:hover {
 }
 
 .skillBox__skills .skillSetBox .skillSetAndValue {
-  padding-bottom: var(--base-space-big);
+  padding-bottom: var(--base-space-bigger);
 }
 
 .skillBox__skills .skillSetBox .skillSetAndValue .skillSet {
@@ -452,6 +461,10 @@ a:hover {
   position: relative;
 }
 
+.work__projects .project.invisible {
+  display: none;
+}
+
 .work__projects .project img {
   width: 100%;
   position: relative;
@@ -509,6 +522,7 @@ a:hover {
 .testimonial__outerBox {
   padding: var(--base-space-bigger);
   width: 90%;
+  margin-bottom: 70px;
 }
 
 .testimonial__outerBox .innerBox {
@@ -518,7 +532,7 @@ a:hover {
 }
 
 .testimonial__outerBox .innerBox .person {
-  width: 100px;
+  width: 200px;
 }
 
 .testimonial__outerBox .innerBox .person img {
@@ -531,7 +545,8 @@ a:hover {
   flex: 1 1 80%;
   text-align: center;
   border-radius: 3px;
-  padding: var(--base-space-big);
+  font-size: var(--font-small);
+  padding: var(--base-space-bigger);
 }
 
 .testimonial__outerBox .innerBox:nth-child(1) p {
@@ -552,6 +567,7 @@ a:hover {
 }
 
 .contact h1 {
+  padding-top: 30px;
   color: var(--color-white);
   margin-bottom: var(--base-space-medium);
 }
